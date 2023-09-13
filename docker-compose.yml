@@ -1,0 +1,39 @@
+version: '3'
+
+
+services:
+
+ build:
+
+  build:
+
+   context: .
+
+   dockerfile: Dockerfile_build
+
+  volumes:
+
+   - app-data:/usr/src/app
+
+  ports:
+
+   - "8081:8080"
+
+
+
+ test:
+
+  build:
+
+   context: .
+
+   dockerfile: Dockerfile_test
+
+  volumes:
+
+   - app-data:/usr/src/app
+
+
+volumes:
+
+ app-data:
